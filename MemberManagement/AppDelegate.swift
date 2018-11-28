@@ -13,6 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
+    var memoList = [MemoVO]()
+    
     var id : String! //!나 ? 는 나중에 값을 저장할 수 있도록 선언
     //!나 ?가 없으면 무조건 값을 가지고 있어야 합니다.
     var nickname : String!

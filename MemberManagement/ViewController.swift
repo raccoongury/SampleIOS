@@ -11,6 +11,16 @@ import UIKit
 import Alamofire
 
 class ViewController: UIViewController {
+    
+    //메모 애플리케이션으로 가는 버튼
+    @IBAction func moveMemo(_ sender: Any) {
+        let memoListVC =
+            self.storyboard?.instantiateViewController(withIdentifier: "MemoListVC") as? MemoListVC
+        memoListVC?.navigationItem.title = "메모 목록"
+        self.navigationController?.pushViewController(memoListVC!, animated: true)
+    }
+    
+    //영화 플리케이션으로가는 버튼
     @IBAction func moveMovie(_ sender: Any) {
         //하위 뷰 컨트롤러 객체 만들기
         let movieListController =

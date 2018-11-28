@@ -25,6 +25,10 @@
 		65D5331521ACF9BA006173B6 /* TheaterListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D5331421ACF9BA006173B6 /* TheaterListController.swift */; };
 		65D5331721AD12B3006173B6 /* TheaterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D5331621AD12B3006173B6 /* TheaterCell.swift */; };
 		65D5332C21AE1EF8006173B6 /* DisplayMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D5332B21AE1EF8006173B6 /* DisplayMapViewController.swift */; };
+		65D5333221AE3281006173B6 /* MemoListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D5333121AE3281006173B6 /* MemoListVC.swift */; };
+		65D5333521AE412D006173B6 /* MemoFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D5333421AE412D006173B6 /* MemoFormVC.swift */; };
+		65D5333721AE611A006173B6 /* MemoReadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D5333621AE611A006173B6 /* MemoReadVC.swift */; };
+		65D5333921AE69AE006173B6 /* MemoVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D5333821AE69AE006173B6 /* MemoVO.swift */; };
 		828B9CBB0D4F189930682102 /* Pods_SampleIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FF6A7B301F71DDBEE67B0C4 /* Pods_SampleIOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +58,10 @@
 		65D5331421ACF9BA006173B6 /* TheaterListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterListController.swift; sourceTree = "<group>"; };
 		65D5331621AD12B3006173B6 /* TheaterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterCell.swift; sourceTree = "<group>"; };
 		65D5332B21AE1EF8006173B6 /* DisplayMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayMapViewController.swift; sourceTree = "<group>"; };
+		65D5333121AE3281006173B6 /* MemoListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListVC.swift; sourceTree = "<group>"; };
+		65D5333421AE412D006173B6 /* MemoFormVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoFormVC.swift; sourceTree = "<group>"; };
+		65D5333621AE611A006173B6 /* MemoReadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoReadVC.swift; sourceTree = "<group>"; };
+		65D5333821AE69AE006173B6 /* MemoVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoVO.swift; sourceTree = "<group>"; };
 		8AF1BB33E9B96254E5D78B4D /* Pods-SampleIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SampleIOS/Pods-SampleIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		B98835E0F84B32422B679FD1 /* Pods_MemberManagement.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemberManagement.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -125,8 +133,8 @@
 		659BBBA321A50E64009B8CA7 /* MemberManagement */ = {
 			isa = PBXGroup;
 			children = (
-				65D5332D21AE2C29006173B6 /* 극장 */,
-				65D5332F21AE2C7A006173B6 /* 영화 */,
+				65D5333321AE3286006173B6 /* 메모애플리케이션 */,
+				65D5333021AE31F8006173B6 /* 영화애플리케이션 */,
 				659BBBA421A50E64009B8CA7 /* AppDelegate.swift */,
 				659BBBA621A50E64009B8CA7 /* ViewController.swift */,
 				659BBBA821A50E64009B8CA7 /* Main.storyboard */,
@@ -158,6 +166,28 @@
 			);
 			name = "영화";
 			path = "영화";
+			sourceTree = "<group>";
+		};
+		65D5333021AE31F8006173B6 /* 영화애플리케이션 */ = {
+			isa = PBXGroup;
+			children = (
+				65D5332D21AE2C29006173B6 /* 극장 */,
+				65D5332F21AE2C7A006173B6 /* 영화 */,
+			);
+			name = "영화애플리케이션";
+			path = "영화어플리케이션";
+			sourceTree = "<group>";
+		};
+		65D5333321AE3286006173B6 /* 메모애플리케이션 */ = {
+			isa = PBXGroup;
+			children = (
+				65D5333121AE3281006173B6 /* MemoListVC.swift */,
+				65D5333421AE412D006173B6 /* MemoFormVC.swift */,
+				65D5333621AE611A006173B6 /* MemoReadVC.swift */,
+				65D5333821AE69AE006173B6 /* MemoVO.swift */,
+			);
+			name = "메모애플리케이션";
+			path = "메모어플리케이션";
 			sourceTree = "<group>";
 		};
 		7704950A469682268C954EEB /* Frameworks */ = {
@@ -353,11 +383,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				659BBBA721A50E64009B8CA7 /* ViewController.swift in Sources */,
+				65D5333521AE412D006173B6 /* MemoFormVC.swift in Sources */,
+				65D5333721AE611A006173B6 /* MemoReadVC.swift in Sources */,
 				65D5331721AD12B3006173B6 /* TheaterCell.swift in Sources */,
 				655501DD21AB9BA500A25B59 /* MovieVO.swift in Sources */,
 				65D5332C21AE1EF8006173B6 /* DisplayMapViewController.swift in Sources */,
 				655501D921AB888F00A25B59 /* MovieListController.swift in Sources */,
+				65D5333921AE69AE006173B6 /* MemoVO.swift in Sources */,
 				65D5331321ACDCDF006173B6 /* DetailViewController.swift in Sources */,
+				65D5333221AE3281006173B6 /* MemoListVC.swift in Sources */,
 				65D5331521ACF9BA006173B6 /* TheaterListController.swift in Sources */,
 				655501E121ABA9B300A25B59 /* MovieCell.swift in Sources */,
 				659BBBA521A50E64009B8CA7 /* AppDelegate.swift in Sources */,
