@@ -11,7 +11,29 @@ import UIKit
 import Alamofire
 
 class ViewController: UIViewController {
-
+    @IBAction func moveMovie(_ sender: Any) {
+        //하위 뷰 컨트롤러 객체 만들기
+        let movieListController =
+            self.storyboard?.instantiateViewController(withIdentifier: "MovieListController") as! MovieListController
+        
+        let theaterListController =
+            self.storyboard?.instantiateViewController(withIdentifier: "TheaterListController") as! TheaterListController
+        
+        //네비게이션 컨트롤러가 있을 때는 바로 푸시를 하면 됩니다.
+        //없을 때는 네비게이션 컨트롤러를 만들고 네비게이션 컨트롤러를 present로 출력
+        //뒤로 버튼을 새로 만들기
+        self.navigationItem.backBarButtonItem =
+            UIBarButtonItem(title: "메인화면", style: .done, target: nil, action: nil)
+        //탭 바 컨트롤러 생성
+        let tabbarController = UITabBarController()
+        tabbarController.viewControllers = [movieListController, theaterListController]
+        
+        //네비게이션으로 이동
+        self.navigationController?.pushViewController(
+            tabbarController, animated: true)
+        
+    }
+    
     @IBOutlet weak var loginbtn: UIButton!
     
     //AppDelegate 객체에 대한 참조 변수
@@ -36,7 +58,7 @@ class ViewController: UIViewController {
                 let id = alert.textFields![0].text
                 let pw = alert.textFields![1].text
                 //웹에 요청
-                let request = Alamofire.request("http://192.168.0.116:8080/server/member/login?id=\(id!)&pw=\(pw!)", method:.get, parameters:nil)
+                let request = Alamofire.request("http://192.168.0.116:8080/whatdidweather/weatherMember/login?email=\(id!)&pw=\(pw!)", method:.get, parameters:nil)
                 //결과 사용
                 request.responseJSON{
                     response in
@@ -59,7 +81,7 @@ class ViewController: UIViewController {
                             self.title = "\(self.appDelegate.nickname!)님 로그인"
                             
                             //image 에 저장된 데이터로 서버에서 이미지를 다운로드 받아 타이틀로 설정
-                            let request = Alamofire.request("http://192.168.0.116:8080/server/images/\(self.appDelegate.image!)", method:.get, parameters:nil)
+                            let request = Alamofire.request("http://192.168.0.116:8080/whatdidweather/weatherMember/weatherMemberimage/\(self.appDelegate.image!)", method:.get, parameters:nil)
                             request.response{
                                 response in
                                 //다운로드 받은 데이터를 가지고 image 생성
@@ -96,6 +118,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+ 
+        ///class는 사용하기 쉽다, 변경하기 어렵다
         
         //AppDelegate에 대한 참조를 생성
         appDelegate = UIApplication.shared.delegate as? AppDelegate
