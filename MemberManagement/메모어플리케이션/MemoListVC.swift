@@ -9,6 +9,10 @@
 import UIKit
 
 class MemoListVC: UITableViewController {
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    ///
+    
     //이벤트 처리에 사용할 메소드
     @objc func add(_ barButtonItem: UIBarButtonItem){
         //MemoFormVC 화면 출력하기
@@ -24,73 +28,67 @@ class MemoListVC: UITableViewController {
         self.navigationItem.rightBarButtonItem =
             UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action: #selector(MemoListVC.add(_:)))
     }
+    
+    //뷰가 출력될 때 마다 호출되는 메소드
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView.reloadData()
+    }
 
 
     // MARK: - Table view data source
-
+    
+    //섹션의 개수를 설정하는 메소드
+    //없으면 1을 리턴
+    //그룹화를 하지 않을 거라면 삭제 또는 1을 리턴하도록 해야 합니다.
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
+    
+    //그룹 별 행의 개수를 설정하는 메소드
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return appDelegate.memoList.count
     }
-
-    /*
+    
+    //셀을 설정하는 메소드
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        //행 번호에 해당하는 데이터를 가져오기
+        let memo = appDelegate.memoList[indexPath.row]
+        //image 존재 여부에 따라 셀의 아이디를 설정
+        //if indexPath.row % 2 == 0
+        let cellId = memo.image == nil ? "MemoCell" : "MemoCellWithImage"
+        //셀을 만들기
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as! MemoCell
+        cell.subject.text = memo.title
+        cell.contents.text = memo.contents
+        //cell.regdate.text = memo.regdate
+        //날짜를 원하는 형식의 문자열로 만들어주는 객체를 생성
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let st = formatter.string(from:memo.regdate!)
+        cell.regdate.text = st
+        //어떤 경우에는 존재하고 어떤 경우에는 nil 인 데이터를 사용할 때는
+        //?를 해서 사용해야 합니다.
+        //!는 안됩니다.
+        //이미지 안넣을 경우도 있으니 ? 추가
+        cell.img?.image = memo.image
+        
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    //셀의 높이를 설정해주는 메소드 재정의
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
+        return 80
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    //셀을 선택했을 때 호출되는 메소드
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let memo = appDelegate.memoList[indexPath.row]
+        let memoReadVC = self.storyboard?.instantiateViewController(withIdentifier: "MemoReadVC") as! MemoReadVC
+        memoReadVC.memo = memo
+        self.navigationController?.pushViewController(memoReadVC, animated: true)
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+    
 }

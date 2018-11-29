@@ -49,6 +49,35 @@ class MemoFormVC: UIViewController {
     }
     
     @IBAction func save(_ sender: Any) {
+        //텍스트 뷰에 내용이 없으면 경고 창을 출력하고 종료
+        //조건을 만족하지 않으면 종료 : guard
+        //조건에 맞는 경우와 그렇지 않은 경우에 다른 처리 : if
+        
+        //contents에 내용이 없으면 리턴
+        guard self.contents.text.isEmpty == false else{
+            let alert = UIAlertController(title: "텍스트 뷰에 내용을 작성해야 합니다.", message: "",
+                                          preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "확인", style: .default))
+            self.present(alert, animated: true)
+            return
+        }
+        
+        //입력한 문자열이 있는 경우 데이터를 생성
+        let memo = MemoVO()
+        memo.title = self.subject
+        memo.contents = self.contents.text
+        memo.image = self.preview.image
+        memo.regdate = Date()
+        
+        //데이터 변수를 소유하고 있는 AppDelegate 인스턴스에 대한 포인터를 생성
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        //데이터 저장 - 이 작업 후에 memo 데이터를
+        //Core Data 나 Server에 저장하고 다시 출력
+        appDelegate.memoList.append(memo)
+        //print("memoList:\(appDelegate.memoList)")
+        
+        //이전 뷰 컨트롤러 로 돌아가기
+        self.navigationController?.popViewController(animated: true)
     }
     
     override func viewDidLoad() {
