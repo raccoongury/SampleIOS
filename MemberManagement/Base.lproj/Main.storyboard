@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="99l-84-7Wa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="J5v-5J-WVw">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -254,6 +254,68 @@
             </objects>
             <point key="canvasLocation" x="3360.8000000000002" y="790.25487256371821"/>
         </scene>
+        <!--ProfileVC-->
+        <scene sceneID="B53-Ii-hv9">
+            <objects>
+                <viewController storyboardIdentifier="ProfileVC" id="ZjW-lx-d8H" customClass="ProfileVC" customModule="MemberManagement" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IgL-cp-Fmz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Atw-5e-DYZ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5pF-0l-zkk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-713" y="103"/>
+        </scene>
+        <!--Reveal View Controller-->
+        <scene sceneID="6EI-c7-zzS">
+            <objects>
+                <viewController id="J5v-5J-WVw" customClass="SWRevealViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9VP-AO-CQY" customClass="re">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="LTX-1T-aKE"/>
+                    </view>
+                    <connections>
+                        <segue destination="Aki-Av-kXQ" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="RVL-R7-AYW"/>
+                        <segue destination="99l-84-7Wa" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="AcA-d0-RAO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9jU-vd-RBr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-719" y="793"/>
+        </scene>
+        <!--Side BarVC-->
+        <scene sceneID="xNR-uL-ADK">
+            <objects>
+                <tableViewController id="Aki-Av-kXQ" customClass="SideBarVC" customModule="MemberManagement" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LQ0-dU-o9h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="U9b-PJ-6Gk">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="U9b-PJ-6Gk" id="lER-NX-L2r">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Aki-Av-kXQ" id="iMe-bc-R8n"/>
+                            <outlet property="delegate" destination="Aki-Av-kXQ" id="z1i-nm-EEf"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5RM-Ap-uva" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-719" y="1562"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="dsr-XA-wYg">
             <objects>
@@ -299,14 +361,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="s7i-eZ-YjH">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <view key="tableFooterView" contentMode="scaleToFill" id="jps-fk-6jl">
-                            <rect key="frame" x="0.0" y="165" width="375" height="44"/>
+                            <rect key="frame" x="0.0" y="603" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemoCell" id="kJ9-0W-8h4" customClass="MemoCell" customModule="MemberManagement" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="35" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="79" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kJ9-0W-8h4" id="MmS-P9-Haq">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -359,7 +426,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemoCellWithImage" rowHeight="86" id="hHV-fS-1v0" customClass="MemoCell" customModule="MemberManagement" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="79" width="375" height="86"/>
+                                <rect key="frame" x="0.0" y="123" width="375" height="86"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hHV-fS-1v0" id="r1i-xf-hin">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="85.5"/>
@@ -430,6 +497,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="메모 목록" id="hhj-HQ-ABN"/>
                     <connections>
+                        <outlet property="searchBar" destination="s7i-eZ-YjH" id="Y2h-rE-IsT"/>
                         <segue destination="UVA-kr-gnh" kind="show" id="CJk-cZ-Rnk"/>
                         <segue destination="yTb-ZE-eis" kind="show" id="SXM-p8-SWd"/>
                     </connections>

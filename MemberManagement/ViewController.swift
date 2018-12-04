@@ -128,6 +128,16 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let revealVC = self.revealViewController(){
+            let btn = UIBarButtonItem()
+            btn.image = UIImage(named:"sidemenu.png")
+            btn.target = revealVC
+            btn.action = #selector(revealVC.revealToggle(_:))
+            self.navigationItem.leftBarButtonItem = btn
+            self.view.addGestureRecognizer(
+                revealVC.panGestureRecognizer())
+        }
  
         ///class는 사용하기 쉽다, 변경하기 어렵다
         

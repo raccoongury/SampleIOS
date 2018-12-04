@@ -17,22 +17,22 @@ class MemoReadVC: UIViewController {
     var memo : MemoVO?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.subject.text = memo?.title
         self.contents.text = memo?.contents
         self.img.image = memo?.image
-        //self.navigationItem.title = "상세보기"
+        self.navigationItem.title = "상세보기"
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
