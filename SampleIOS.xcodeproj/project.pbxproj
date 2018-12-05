@@ -211,12 +211,11 @@
 		659BBBA321A50E64009B8CA7 /* MemberManagement */ = {
 			isa = PBXGroup;
 			children = (
+				65EABFAC21B75E760072701A /* 영화애플리케이션 */,
 				65EABFAB21B75E170072701A /* 메모애플리케이션 */,
 				651DF37C21B0E13A00DAB715 /* images */,
 				659BBBA421A50E64009B8CA7 /* AppDelegate.swift */,
-				65D5332D21AE2C29006173B6 /* 극장 */,
 				659BBBA621A50E64009B8CA7 /* ViewController.swift */,
-				65D5332F21AE2C7A006173B6 /* 영화 */,
 				659BBBA821A50E64009B8CA7 /* Main.storyboard */,
 				651DF3AF21B4E18700DAB715 /* Model.xcdatamodeld */,
 				651DF3AB21B4B3C500DAB715 /* ProfileVC.swift */,
@@ -266,6 +265,16 @@
 			);
 			name = "메모애플리케이션";
 			path = "메모애플리케이션";
+			sourceTree = "<group>";
+		};
+		65EABFAC21B75E760072701A /* 영화애플리케이션 */ = {
+			isa = PBXGroup;
+			children = (
+				65D5332F21AE2C7A006173B6 /* 영화 */,
+				65D5332D21AE2C29006173B6 /* 극장 */,
+			);
+			name = "영화애플리케이션";
+			path = "영화애플리케이션";
 			sourceTree = "<group>";
 		};
 		7704950A469682268C954EEB /* Frameworks */ = {
