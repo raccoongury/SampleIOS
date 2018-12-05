@@ -212,10 +212,15 @@
 			isa = PBXGroup;
 			children = (
 				651DF37C21B0E13A00DAB715 /* images */,
-				65D5333321AE3286006173B6 /* 메모애플리케이션 */,
 				65D5333021AE31F8006173B6 /* 영화애플리케이션 */,
 				659BBBA421A50E64009B8CA7 /* AppDelegate.swift */,
 				659BBBA621A50E64009B8CA7 /* ViewController.swift */,
+				65D5333121AE3281006173B6 /* MemoListVC.swift */,
+				65D5333421AE412D006173B6 /* MemoFormVC.swift */,
+				65D5333621AE611A006173B6 /* MemoReadVC.swift */,
+				65D5333821AE69AE006173B6 /* MemoVO.swift */,
+				657255B321AF754800A4C0A5 /* MemoCell.swift */,
+				651DF3B221B4FA4B00DAB715 /* MemoDAO.swift */,
 				659BBBA821A50E64009B8CA7 /* Main.storyboard */,
 				651DF3AF21B4E18700DAB715 /* Model.xcdatamodeld */,
 				651DF3AB21B4B3C500DAB715 /* ProfileVC.swift */,
@@ -261,20 +266,6 @@
 			);
 			name = "영화애플리케이션";
 			path = "영화어플리케이션";
-			sourceTree = "<group>";
-		};
-		65D5333321AE3286006173B6 /* 메모애플리케이션 */ = {
-			isa = PBXGroup;
-			children = (
-				65D5333121AE3281006173B6 /* MemoListVC.swift */,
-				65D5333421AE412D006173B6 /* MemoFormVC.swift */,
-				65D5333621AE611A006173B6 /* MemoReadVC.swift */,
-				65D5333821AE69AE006173B6 /* MemoVO.swift */,
-				657255B321AF754800A4C0A5 /* MemoCell.swift */,
-				651DF3B221B4FA4B00DAB715 /* MemoDAO.swift */,
-			);
-			name = "메모애플리케이션";
-			path = "메모어플리케이션";
 			sourceTree = "<group>";
 		};
 		7704950A469682268C954EEB /* Frameworks */ = {
