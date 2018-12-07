@@ -36,6 +36,7 @@
 		655501DD21AB9BA500A25B59 /* MovieVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655501DC21AB9BA500A25B59 /* MovieVO.swift */; };
 		655501E121ABA9B300A25B59 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655501E021ABA9B300A25B59 /* MovieCell.swift */; };
 		657255B421AF754800A4C0A5 /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657255B321AF754800A4C0A5 /* MemoCell.swift */; };
+		65760DDE21BA10E3006E978F /* DataSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65760DDD21BA10E3006E978F /* DataSync.swift */; };
 		659BBB8D21A50E3A009B8CA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659BBB8C21A50E3A009B8CA7 /* AppDelegate.swift */; };
 		659BBB8F21A50E3A009B8CA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659BBB8E21A50E3A009B8CA7 /* ViewController.swift */; };
 		659BBB9221A50E3A009B8CA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 659BBB9021A50E3A009B8CA7 /* Main.storyboard */; };
@@ -92,6 +93,7 @@
 		655501DC21AB9BA500A25B59 /* MovieVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieVO.swift; sourceTree = "<group>"; };
 		655501E021ABA9B300A25B59 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		657255B321AF754800A4C0A5 /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
+		65760DDD21BA10E3006E978F /* DataSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSync.swift; sourceTree = "<group>"; };
 		659BBB8921A50E3A009B8CA7 /* SampleIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		659BBB8C21A50E3A009B8CA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		659BBB8E21A50E3A009B8CA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 				65D5333821AE69AE006173B6 /* MemoVO.swift */,
 				657255B321AF754800A4C0A5 /* MemoCell.swift */,
 				651DF3B221B4FA4B00DAB715 /* MemoDAO.swift */,
+				65760DDD21BA10E3006E978F /* DataSync.swift */,
 			);
 			name = "메모애플리케이션";
 			path = "메모애플리케이션";
@@ -505,6 +508,7 @@
 				65D5333221AE3281006173B6 /* MemoListVC.swift in Sources */,
 				65D5331521ACF9BA006173B6 /* TheaterListController.swift in Sources */,
 				651DF3AC21B4B3C500DAB715 /* ProfileVC.swift in Sources */,
+				65760DDE21BA10E3006E978F /* DataSync.swift in Sources */,
 				651DF38C21B1158B00DAB715 /* SideBarVC.swift in Sources */,
 				655501E121ABA9B300A25B59 /* MovieCell.swift in Sources */,
 				659BBBA521A50E64009B8CA7 /* AppDelegate.swift in Sources */,

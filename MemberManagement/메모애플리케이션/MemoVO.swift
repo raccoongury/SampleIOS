@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import CoreData
 class MemoVO{
+    var num:Int32?
     var memoIdx:Int?//데이터 식별값
     var title:String?//제목
     var contents:String?//내용
